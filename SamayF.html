@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="સમય ફેબ્રિકેશન - એહમદ ભાઈ સમા | રિમોટ ગેટ, જૂલા, સીડી, જાળી અને ઘરે વેલ્ડીંગ સેવા">
+  <title>સમય ફેબ્રિકેશન | એહમદ ભાઈ સમા - મેટલ ફેબ્રિકેશન</title>
+
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --metal-dark: #2d2d2d;
+      --metal-mid: #4a4a4a;
+      --metal-light: #8a8a8a;
+      --accent: #e67e22;
+      --accent-light: #f39c12;
+      --cream: #faf9f6;
+    }
+    * { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans Gujarati', 'Poppins', sans-serif;
+      background: #f5f4f1;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    .font-display { font-family: 'Playfair Display', 'Noto Sans Gujarati', serif; }
+    .glass-nav {
+      background: rgba(35, 35, 35, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(230, 126, 34, 0.4);
+    }
+    .magnetic-btn {
+      transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+      cursor: pointer;
+    }
+    .spark-particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #f39c12;
+      border-radius: 50%;
+      animation: sparkFly 2.8s infinite ease-out;
+      pointer-events: none;
+      box-shadow: 0 0 10px #e67e22;
+    }
+    @keyframes sparkFly {
+      0% { transform: translate(0,0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+    }
+    .ken-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      animation: kenBurns 12s infinite alternate ease-in-out;
+    }
+    @keyframes kenBurns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.12); }
+    }
+    .card-3d {
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    .card-3d:hover {
+      transform: rotateY(4deg) rotateX(3deg) translateY(-12px) scale(1.02);
+      box-shadow: 0 35px 55px -15px rgba(0,0,0,0.35), 0 0 35px rgba(230,126,34,0.25);
+    }
+    .glow-border { box-shadow: 0 0 25px rgba(230,126,34,0.45), 0 0 50px rgba(230,126,34,0.2); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .floating { animation: float 4.5s ease-in-out infinite; }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(230,126,34,0.5); }
+      50% { box-shadow: 0 0 0 20px rgba(230,126,34,0); }
+    }
+    .pulse-glow { animation: pulse-glow 2.2s infinite; }
+    .preloader-hidden { opacity: 0; visibility: hidden; transition: all 0.7s ease; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #2d2d2d; }
+    ::-webkit-scrollbar-thumb { background: #e67e22; border-radius: 10px; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#1e1e1e] transition-all duration-700">
+    <div class="relative mb-8">
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#e67e22" stroke-width="3" fill="none" stroke-dasharray="283" stroke-dashoffset="0" class="animate-spin" style="animation-duration: 2s;"/>
+        <path d="M35 50 L45 60 L65 40" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="absolute -top-3 -right-3 text-3xl">⚙️</div>
+    </div>
+    <p class="text-orange-400 text-2xl font-display font-bold mb-4 tracking-wider">સમય ફેબ્રિકેશન</p>
+    <p class="text-orange-300/60 text-sm mb-6 tracking-[.3em] uppercase">Precision Metal Work</p>
+    <div class="w-72 h-1.5 bg-white/10 rounded-full overflow-hidden">
+      <div id="progressBar" class="h-full bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 w-0 transition-all duration-100 rounded-full"></div>
+    </div>
+    <p id="progressText" class="text-orange-200/60 text-xs mt-3 font-mono">0%</p>
+  </div>
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainWebsite" class="opacity-0 transition-all duration-800">
+
+    <!-- NAVBAR -->
+    <nav class="glass-nav fixed top-0 left-0 w-full z-[1000] px-5 md:px-12 py-4 flex items-center justify-between text-white/95">
+      <div class="flex items-center gap-3">
+        <span class="text-4xl floating">⚙️</span>
+        <div>
+          <span class="font-display text-2xl md:text-3xl font-bold tracking-wide text-orange-100">સમય</span>
+          <span class="text-orange-400 font-display text-2xl md:text-3xl font-bold">.</span>
+          <p class="text-[10px] text-orange-300/60 tracking-[.2em] uppercase -mt-1">Fabrication</p>
+        </div>
+      </div>
+      <div class="hidden lg:flex gap-8 text-sm font-semibold tracking-wider uppercase">
+        <a href="#home" class="hover:text-orange-400 transition-colors duration-300">હોમ</a>
+        <a href="#about" class="hover:text-orange-400 transition-colors duration-300">અમારી વાર્તા</a>
+        <a href="#products" class="hover:text-orange-400 transition-colors duration-300">ઉત્પાદનો</a>
+        <a href="#whyus" class="hover:text-orange-400 transition-colors duration-300">શા માટે અમે?</a>
+        <a href="#service" class="hover:text-orange-400 transition-colors duration-300">સેવાઓ</a>
+        <a href="#contact" class="hover:text-orange-400 transition-colors duration-300">સંપર્ક</a>
+      </div>
+      <div class="lg:hidden">
+        <button id="mobileMenuBtn" class="text-2xl text-orange-300"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-[#1e1e1e]/98 backdrop-blur-xl z-[999] hidden flex flex-col items-center justify-center gap-8 text-white text-2xl font-semibold">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-4xl text-orange-400">&times;</button>
+      <a href="#home" class="hover:text-orange-400">હોમ</a>
+      <a href="#about" class="hover:text-orange-400">અમારી વાર્તા</a>
+      <a href="#products" class="hover:text-orange-400">ઉત્પાદનો</a>
+      <a href="#whyus" class="hover:text-orange-400">શા માટે અમે?</a>
+      <a href="#service" class="hover:text-orange-400">સેવાઓ</a>
+      <a href="#contact" class="hover:text-orange-400">સંપર્ક</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      <div class="absolute inset-0 z-20 pointer-events-none overflow-hidden">
+        <div class="spark-particle" style="left:10%; top:70%; --tx:40px; --ty:-120px;"></div>
+        <div class="spark-particle" style="left:30%; top:75%; --tx:-50px; --ty:-140px;"></div>
+        <div class="spark-particle" style="left:50%; top:65%; --tx:60px; --ty:-100px;"></div>
+        <div class="spark-particle" style="left:70%; top:80%; --tx:-30px; --ty:-160px;"></div>
+        <div class="spark-particle" style="left:85%; top:68%; --tx:25px; --ty:-130px;"></div>
+        <div class="spark-particle" style="left:20%; top:85%; --tx:-45px; --ty:-110px;"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/70 z-10"></div>
+      <div class="ken-slide" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop');"></div>
+      <div class="ken-slide" style="background-image: url('https://images.unsplash.com/photo-1535813547-99c4200e9fc3?q=80&w=2070&auto=format&fit=crop'); animation-delay: 4s; opacity:0; animation: fadeSlideHero 12s infinite;"></div>
+      <div class="ken-slide" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2070&auto=format&fit=crop'); animation-delay: 8s; opacity:0; animation: fadeSlideHero 12s infinite;"></div>
+      <style>@keyframes fadeSlideHero{0%,18%{opacity:1;}33%,100%{opacity:1;}}</style>
+      <div class="relative z-30 text-center text-white max-w-6xl px-6">
+        <div class="inline-block mb-4 bg-orange-600/30 backdrop-blur-md px-6 py-2 rounded-full border border-orange-400/50">
+          <span class="text-orange-200 text-sm tracking-widest uppercase font-semibold">⚡ ગુજરાતનું વિશ્વસનીય ફેબ્રિકેશન ⚡</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold drop-shadow-2xl leading-tight">
+          <span class="text-white">સમય</span><br>
+          <span class="text-orange-400">ફેબ્રિકેશન</span>
+        </h1>
+        <p class="mt-6 text-xl md:text-3xl font-light italic text-white/90 max-w-3xl mx-auto">
+          "લોખંડ નહીં, <span class="text-orange-300 font-semibold">વિશ્વાસ</span> ઘડીએ છીએ"
+        </p>
+        <p class="mt-4 text-base md:text-xl text-orange-200/80 font-medium">
+          📍 મોરબી, ગુજરાત | એહમદ ભાઈ સમા
+        </p>
+        <div class="mt-10 flex flex-wrap gap-5 justify-center">
+          <a href="#products" class="magnetic-btn inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-400 hover:to-yellow-400 text-black px-10 py-5 rounded-full font-bold text-lg shadow-2xl transition-all pulse-glow">
+            <i class="fas fa-shopping-cart"></i> ઓર્ડર કરો
+          </a>
+          <a href="tel:+919714724797" class="magnetic-btn inline-flex items-center gap-3 border-2 border-white/50 hover:border-orange-400 text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-white/10 transition-all">
+            <i class="fas fa-phone-alt"></i> 97147 24797
+          </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 animate-bounce">
+          <i class="fas fa-chevron-down text-orange-300 text-3xl"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 px-5 bg-[#faf9f6] relative overflow-hidden">
+      <div class="absolute top-10 left-10 text-8xl opacity-5 floating">🔩</div>
+      <div class="absolute bottom-10 right-10 text-8xl opacity-5 floating" style="animation-delay: 1s;">⚙️</div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-orange-600 text-sm tracking-[.3em] uppercase font-semibold">અમારો વારસો</span>
+          <h2 class="text-4xl md:text-6xl font-display font-bold text-[#2d2d2d] mt-3">અમારી <span class="text-orange-600">વાર્તા</span></h2>
+          <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6 order-2 md:order-1">
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-orange-200/60">
+              <h3 class="text-2xl font-display font-bold text-orange-700 mb-4">👨‍🏭 એહમદ ભાઈ સમા</h3>
+              <p class="text-gray-700 leading-relaxed text-lg">
+                <strong class="text-orange-700">એહમદ ભાઈ</strong> એ વર્ષોના અનુભવ સાથે સમય ફેબ્રિકેશનની સ્થાપના કરી. લોખંડના કામમાં ચોકસાઈ અને ગુણવત્તા એ અમારી ઓળખ છે. ઘરના દરવાજાથી લઈને બગીચાના જૂલા સુધી, દરેક વસ્તુ કલાત્મકતાથી બનાવીએ છીએ.
+              </p>
+            </div>
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-orange-200/60">
+              <h3 class="text-2xl font-display font-bold text-orange-700 mb-4">💪 અમારું વચન</h3>
+              <p class="text-gray-700 leading-relaxed text-lg">
+                દરેક પ્રોડક્ટ <strong class="text-orange-700">ટકાઉ, મજબૂત અને સુંદર</strong> હોય તેની ગેરંટી. અમે ફક્ત સામાન નથી બનાવતા, અમે તમારા સપનાને લોખંડમાં ઢાળીએ છીએ.
+              </p>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop" alt="સમય ફેબ્રિકેશન" class="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-2xl" onerror="this.src='https://placehold.co/600x400/e67e22/ffffff?text=Samay+Fabrication'">
+              <div class="absolute -bottom-6 -left-6 bg-orange-500 text-white px-6 py-3 rounded-2xl shadow-xl">
+                <p class="text-sm font-semibold">અનુભવ</p>
+                <p class="text-2xl font-bold">૧૫+ વર્ષ</p>
+              </div>
+              <div class="absolute -top-6 -right-6 bg-white px-6 py-3 rounded-2xl shadow-xl border-2 border-orange-300">
+                <p class="text-sm font-semibold text-gray-600">માલિક</p>
+                <p class="text-xl font-bold text-orange-700">એહમદ સમા</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="whyus" class="py-24 px-5 bg-[#2d2d2d] text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-10 text-9xl">🔧</div>
+        <div class="absolute bottom-20 right-10 text-9xl">⚒️</div>
+      </div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <span class="text-orange-400 text-sm tracking-[.3em] uppercase font-semibold">શા માટે સમય?</span>
+          <h2 class="text-4xl md:text-6xl font-display font-bold text-orange-300 mt-3">શા માટે <span class="text-white">સમય ફેબ્રિકેશન?</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-center border border-orange-500/20 hover:border-orange-400/50 transition-all hover:scale-105 duration-300">
+            <span class="text-6xl block mb-4">🏠</span>
+            <h3 class="text-xl font-bold text-orange-300 mb-3">ઘરે સેવા</h3>
+            <p class="text-gray-300 text-sm">તમારા ઘરે આવીને વેલ્ડીંગ અને રીપેરીંગની સુવિધા</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-center border border-orange-500/20 hover:border-orange-400/50 transition-all hover:scale-105 duration-300">
+            <span class="text-6xl block mb-4">🎨</span>
+            <h3 class="text-xl font-bold text-orange-300 mb-3">કસ્ટમ ડિઝાઇન</h3>
+            <p class="text-gray-300 text-sm">તમારા ઓર્ડર મુજબ ગમે તે ડિઝાઇનમાં મેટલ પ્રોડક્ટ્સ</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-center border border-orange-500/20 hover:border-orange-400/50 transition-all hover:scale-105 duration-300">
+            <span class="text-6xl block mb-4">💰</span>
+            <h3 class="text-xl font-bold text-orange-300 mb-3">પોસાય તેવી કિંમત</h3>
+            <p class="text-gray-300 text-sm">ગુણવત્તા સાથે સ્પર્ધાત્મક ભાવ, કોઈ સમાધાન નહીં</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-center border border-orange-500/20 hover:border-orange-400/50 transition-all hover:scale-105 duration-300">
+            <span class="text-6xl block mb-4">📱</span>
+            <h3 class="text-xl font-bold text-orange-300 mb-3">WhatsApp સપોર્ટ</h3>
+            <p class="text-gray-300 text-sm">ફોટો મોકલો, તરત ભાવ મેળવો અને ઓર્ડર કરો</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="py-24 px-5 bg-[#faf9f6]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-orange-600 text-sm tracking-[.3em] uppercase font-semibold">અમારું કામ</span>
+          <h2 class="text-4xl md:text-6xl font-display font-bold text-[#2d2d2d] mt-3">અમારા <span class="text-orange-600">ઉત્પાદનો</span></h2>
+          <p class="text-gray-500 mt-4 text-lg">દરેક વસ્તુ મજબૂત લોખંડમાં • ઓર્ડર કરવા ક્લિક કરો</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Product 1: ગેટ -->
+          <div class="card-3d bg-white rounded-3xl p-8 shadow-xl border border-orange-100 flex flex-col items-center text-center group">
+            <span class="text-7xl block mb-4 group-hover:scale-110 transition-transform duration-300">🏡</span>
+            <h3 class="text-2xl font-display font-bold text-[#2d2d2d]">રિમોટ ગેટ</h3>
+            <p class="text-sm text-gray-500 mt-2">ઓટોમેટિક સ્લાઇડિંગ દરવાજા</p>
+            <p class="text-orange-600 font-bold text-xl mt-3">કસ્ટમ ક્વોટ</p>
+            <button onclick="orderProduct('રિમોટ કંટ્રોલ ગેટ')" class="magnetic-btn mt-5 w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg">
+              <i class="fab fa-whatsapp"></i> પૂછો
+            </button>
+          </div>
+          <!-- Product 2: જૂલા -->
+          <div class="card-3d bg-white rounded-3xl p-8 shadow-xl border border-orange-100 flex flex-col items-center text-center group">
+            <span class="text-7xl block mb-4 group-hover:scale-110 transition-transform duration-300">🌿</span>
+            <h3 class="text-2xl font-display font-bold text-[#2d2d2d]">જૂલા (ઝૂલો)</h3>
+            <p class="text-sm text-gray-500 mt-2">ગાર્ડન માટે છત્ર સાથે</p>
+            <p class="text-orange-600 font-bold text-xl mt-3">કસ્ટમ ડિઝાઇન</p>
+            <button onclick="orderProduct('જૂલા')" class="magnetic-btn mt-5 w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg">
+              <i class="fab fa-whatsapp"></i> પૂછો
+            </button>
+          </div>
+          <!-- Product 3: સીડી -->
+          <div class="card-3d bg-white rounded-3xl p-8 shadow-xl border border-orange-100 flex flex-col items-center text-center group">
+            <span class="text-7xl block mb-4 group-hover:scale-110 transition-transform duration-300">📐</span>
+            <h3 class="text-2xl font-display font-bold text-[#2d2d2d]">સીડી (દાદર)</h3>
+            <p class="text-sm text-gray-500 mt-2">સ્પાઇરલ અને સીધી સીડી</p>
+            <p class="text-orange-600 font-bold text-xl mt-3">માપ પ્રમાણે</p>
+            <button onclick="orderProduct('સીડી')" class="magnetic-btn mt-5 w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg">
+              <i class="fab fa-whatsapp"></i> પૂછો
+            </button>
+          </div>
+          <!-- Product 4: જાળી -->
+          <div class="card-3d bg-white rounded-3xl p-8 shadow-xl border border-orange-100 flex flex-col items-center text-center group">
+            <span class="text-7xl block mb-4 group-hover:scale-110 transition-transform duration-300">🔲</span>
+            <h3 class="text-2xl font-display font-bold text-[#2d2d2d]">જાળી (ગ્રિલ)</h3>
+            <p class="text-sm text-gray-500 mt-2">બારી-બાલ્કની માટે ડિઝાઇનર</p>
+            <p class="text-orange-600 font-bold text-xl mt-3">સ્ક્વેર ફૂટ ભાવ</p>
+            <button onclick="orderProduct('જાળી')" class="magnetic-btn mt-5 w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg">
+              <i class="fab fa-whatsapp"></i> પૂછો
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="service" class="py-24 px-5 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-6xl font-display font-bold text-[#2d2d2d]">અમારી <span class="text-orange-600">સેવાઓ</span></h2>
+          <p class="text-gray-500 mt-4 text-lg">ઘર બેઠા મેટલ વર્ક સોલ્યુશન</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="bg-gray-50 rounded-3xl p-8 shadow-lg">
+            <i class="fas fa-tools text-5xl text-orange-500 mb-4"></i>
+            <h3 class="text-2xl font-bold mb-3">ઑન-સાઇટ વેલ્ડીંગ</h3>
+            <p class="text-gray-600">તમારા ઘરે આવીને તૂટેલા ગેટ, જૂલા, સીડી વગેરે રીપેર કરીએ છીએ.</p>
+          </div>
+          <div class="bg-gray-50 rounded-3xl p-8 shadow-lg">
+            <i class="fas fa-pencil-ruler text-5xl text-orange-500 mb-4"></i>
+            <h3 class="text-2xl font-bold mb-3">કસ્ટમ ફેબ્રિકેશન</h3>
+            <p class="text-gray-600">તમારા કહ્યા પ્રમાણે નવા ડિઝાઇનના ગેટ, રેલિંગ, શેડ વગેરે તૈયાર કરીએ છીએ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 px-5 bg-[#faf9f6]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-6xl font-display font-bold text-[#2d2d2d]">અમારો <span class="text-orange-600">સંપર્ક</span></h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="space-y-6">
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-orange-200">
+              <h3 class="text-2xl font-display font-bold text-orange-700 mb-4">📞 સીધો સંપર્ક</h3>
+              <p class="text-lg flex items-center gap-3 mb-3"><i class="fas fa-user text-orange-600 w-6"></i> <strong>એહમદ ભાઈ સમા</strong></p>
+              <p class="text-lg flex items-center gap-3 mb-3"><i class="fas fa-phone-alt text-green-600 w-6"></i> <a href="tel:+919714724797" class="hover:text-orange-700 font-semibold">+91 97147 24797</a></p>
+              <p class="text-lg flex items-center gap-3"><i class="fas fa-map-marker-alt text-red-500 w-6"></i> મોરબી, ગુજરાત</p>
+            </div>
+            <a href="https://wa.me/919714724797?text=અસ્સલામ%20વાલીકુમ%20એહમદ%20ભાઈ%2C%20સમય%20ફેબ્રિકેશન%20વિશે%20જાણવું%20છે" target="_blank" class="magnetic-btn w-full bg-green-600 hover:bg-green-500 text-white py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 shadow-xl">
+              <i class="fab fa-whatsapp text-2xl"></i> WhatsApp પર ઓર્ડર કરો
+            </a>
+          </div>
+          <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px] border-2 border-orange-300">
+            <iframe src="https://maps.google.com/maps?q=Morbi%20Gujarat&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" class="map-frame" title="સમય ફેબ્રિકેશન લોકેશન"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1e1e1e] text-white py-16 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          <div>
+            <h4 class="text-orange-400 text-2xl font-display font-bold mb-4">સમય ફેબ્રિકેશન</h4>
+            <p class="text-gray-400">ગુણવત્તા અને વિશ્વાસનું બીજું નામ.</p>
+            <div class="flex gap-3 mt-4">
+              <a href="#" class="text-orange-400 hover:text-orange-300 text-xl"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-orange-400 hover:text-orange-300 text-xl"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/919714724797" class="text-orange-400 hover:text-orange-300 text-xl"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">ઝડપી લિંક્સ</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#home" class="hover:text-orange-400">હોમ</a></li>
+              <li><a href="#products" class="hover:text-orange-400">ઉત્પાદનો</a></li>
+              <li><a href="#service" class="hover:text-orange-400">સેવાઓ</a></li>
+            </ul>
+          </div>
+            <div><h3>કાનૂની</h3><a href="https://rehan-sandhi.blogspot.com/2026/02/my-license.html" target="_blank"><i class="fas fa-certificate"></i>  વેબસાઇટ લાઇસન્સ</a><p style="margin-top: 20px; color: #6b7280;"><i class="fas fa-copyright"></i> 2026 </p><p style="color: #6b7280;">All Rights Reserved</p></div>
+                      <div>
+            <a href="https://rehansandhi.netlify.app" target="_blank" class="text-amber-400 hover:underline">RS Digital Ecosystem</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919714724797?text=અસ્સલામ%20વાલીકુમ%20એહમદ%20ભાઈ" target="_blank" class="fixed bottom-8 right-8 z-[998] bg-green-500 hover:bg-green-400 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl pulse-glow transition-all">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <script>
+    // ========== PRELOADER ==========
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const mainWebsite = document.getElementById('mainWebsite');
+    let progress = 0;
+    const loadInterval = setInterval(() => {
+      progress += Math.floor(Math.random() * 12) + 6;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(loadInterval);
+        setTimeout(() => {
+          preloader.classList.add('preloader-hidden');
+          mainWebsite.style.opacity = '1';
+          document.body.style.overflow = 'auto';
+          initGSAP();
+        }, 250);
+      }
+      progressBar.style.width = progress + '%';
+      progressText.textContent = progress + '%';
+    }, 100);
+    document.body.style.overflow = 'hidden';
+
+    // WhatsApp Order
+    function orderProduct(productName) {
+      const phone = '919714724797';
+      const msg = `અસ્સલામ વાલીકુમ એહમદ ભાઈ, મારે ઓર્ડર કરવો છે: ${productName} (સમય ફેબ્રિકેશન વેબસાઇટ પરથી)`;
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    mobileMenuBtn?.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+    closeMobileMenu?.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // GSAP
+    function initGSAP() {
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width/2;
+          const y = e.clientY - rect.top - rect.height/2;
+          gsap.to(btn, { x: x*0.25, y: y*0.25, duration: 0.4, ease: "power2.out" });
+        });
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1,0.4)" });
+        });
+      });
+      gsap.utils.toArray('section').forEach((section, i) => {
+        gsap.from(section, {
+          scrollTrigger: { trigger: section, start: "top 85%", toggleActions: "play none none none" },
+          opacity: 0, y: 50, duration: 0.9, delay: i*0.08, ease: "power3.out"
+        });
+      });
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === "#") return;
+          const target = document.querySelector(href);
+          if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
