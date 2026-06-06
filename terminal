@@ -1,57 +1,61 @@
-[1;35m#################################################################################
-#                                                                               #
-#   ██████╗ ███████╗██╗  ██╗ █████╗ ███╗   ██╗                                  #
-#   ██╔══██╗██╔════╝██║  ██║██╔══██╗████╗  ██║                                  #
-#   ██████╔╝█████╗  ███████║███████║██╔██╗ ██║                                  #
-#   ██╔══██╗██╔══╝  ██╔══██║██╔══██║██║╚██╗██║                                  #
-#   ██║  ██║███████╗██║  ██║██║  ██║██║ ╚████║                                  #
-#   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝                                  #
-#                                                                               #
-#   ███████╗ █████╗ ███╗   ██╗██████╗ ██╗  ██╗██╗                               #
-#   ██╔════╝██╔══██╗████╗  ██║██╔══██╗██║  ██║██║                               #
-#   ███████╗███████║██╔██╗ ██║██║  ██║███████║██║                               #
-#   ╚════██║██╔══██║██║╚██╗██║██║  ██║██╔══██║██║                               #
-#   ███████║██║  ██║██║ ╚████║██████╔╝██║  ██║██║                               #
-#   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝                               #
-#                                                                               #
-#             --- REHAN SANDHI | DIGITAL ECOSYSTEM (2026) ---                  #
-#################################################################################[0m
+#!/bin/bash
 
-[1;36m[+] Developer :[0m Rehan Sandhi
-[1;36m[+] Platform  :[0m Terminal & Browser 
+# स्क्रीन साफ़ करने के लिए
+clear
 
-[1;33m--- AVAILABLE APPS & PROJECTS ---[0m
+# आपका सुंदर हैडर मेन्यू
+echo -e "\e[1;35m#################################################################################"
+echo -e "#                                                                               #"
+echo -e "#   ██████╗ ███████╗██╗  ██╗ █████╗ ███╗   ██╗                                  #"
+echo -e "#   ██╔══██╗██╔════╝██║  ██║██╔══██╗████╗  ██║                                  #"
+echo -e "#   ██████╔╝█████╗  ███████║███████║██╔██╗ ██║                                  #"
+echo -e "#   ██╔══██╗██╔══╝  ██╔══██║██╔══██║██║╚██╗██║                                  #"
+echo -e "#   ██║  ██║███████╗██║  ██║██║  ██║██║ ╚████║                                  #"
+echo -e "#   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝                                  #"
+echo -e "#                                                                               #"
+echo -e "#   ███████╗ █████╗ ███╗   ██╗██████╗ ██╗  ██╗██╗                               #"
+echo -e "#   ██╔════╝██╔══██╗████╗  ██║██╔══██╗██║  ██║██║                               #"
+echo -e "#   ███████╗███████║██╔██╗ ██║██║  ██║███████║██║                               #"
+echo -e "#   ╚════██║██╔══██║██║╚██╗██║██║  ██║██╔══██║██║                               #"
+echo -e "#   ███████║██║  ██║██║ ╚████║██████╔╝██║  ██║██║                               #"
+echo -e "#   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝                               #"
+echo -e "#                                                                               #"
+echo -e "#             --- REHAN SANDHI | DIGITAL ECOSYSTEM ---                          #"
+echo -e "#################################################################################\e[0m"
 
- [1;32m[01] RS Chat (GhostLine)[0m   :: Secure rooms
-      --> Link: https://rs-181.github.io/gl
+echo -e "\e[1;36m[+] Developer :\e[0m Rehan Sandhi"
+echo -e "\e[1;36m[+] Platform  :\e[0m Netlify Ecosystem"
+echo ""
+echo -e "\e[1;33m--- AVAILABLE APPS & PROJECTS ---\e[0m"
+echo ""
+echo -e " \e[1;32m[01]\e[0m RS Chat (GhostLine)[span_0](start_span)"[span_0](end_span)
+echo -e " \e[1;32m[02]\e[0m RS App Store[span_1](start_span)"[span_1](end_span)
+echo -e " \e[1;32m[03]\e[0m RS Blog[span_2](start_span)"[span_2](end_span)
+echo -e " \e[1;32m[04]\e[0m RS Portfolio[span_3](start_span)"[span_3](end_span)
+echo -e " \e[1;32m[05]\e[0m RS Game (2048)[span_4](start_span)"[span_4](end_span)
+echo -e " \e[1;32m[06]\e[0m Aastin-Ka-Sanp[span_5](start_span)"[span_5](end_span)
+echo -e " \e[1;32m[07]\e[0m RS OS[span_6](start_span)"[span_6](end_span)
+echo -e " \e[1;32m[08]\e[0m RS Digital Pay[span_7](start_span)"[span_7](end_span)
+echo -e " \e[1;32m[09]\e[0m RS Browser[span_8](start_span)"[span_8](end_span)
+echo -e " \e[1;32m[10]\e[0m RS Certificate[span_9](start_span)"[span_9](end_span)
+echo ""
+echo -e "\e[1;35m---------------------------------------------------------------------------------\e[0m"
 
- [1;32m[02] RS App Store[0m         :: Premium web apps
-      --> Link: https://rs-appstore.blogspot.com
+# यूजर से नंबर इनपुट मांगने के लिए प्रॉम्प्ट
+echo -n -e "\e[1;36m[?] Enter app number to decrypt & open in browser (e.g., 1 or 3): \e[0m"
+read choice
 
- [1;32m[03] RS Blog[0m              :: Updates & milestones
-      --> Link: https://rehan-sandhi.blogspot.com
-
- [1;32m[04] RS Portfolio[0m         :: Professional work
-      --> Link: https://rehansandhi181.blogspot.com
-
- [1;32m[05] RS Game (2048)[0m       :: Classic number puzzle
-      --> Link: https://amrutam-water.netlify.app/rs.html
-
- [1;32m[06] Aastin-Ka-Sanp[0m       :: Snake & ladder game
-      --> Link: https://rs-181.github.io/Aastin-Ka-Sanp/
-
- [1;32m[07] RS OS[0m                :: Web desktop experience
-      --> Link: https://rs-181.github.io/rs-os/
-
- [1;32m[08] RS Digital Pay[0m       :: Fast payments
-      --> Link: https://rs-digitle-pay.netlify.app/
-
- [1;32m[09] RS Browser[0m           :: Lightweight browser
-      --> Link: https://rs-browser.netlify.app
-
- [1;32m[10] RS Certificate[0m       :: Official credentials
-      --> Link: https://rs-181.github.io/rs-certificate/
-
-[1;35m---------------------------------------------------------------------------------[0m
-[1;31m[!] Web Version :[0m https://rehansandhi.netlify.app
-[1;35m#################################################################################[0m
+# इनपुट के आधार पर ब्राउज़र में लिंक ओपन करने का लॉजिक (xdg-open लिनक्स का डिफ़ॉल्ट ब्राउज़र खोलता है)
+case $choice in
+    1|01) xdg-open "https://rs-181.github.io/gl" ;;[span_10](start_span)[span_10](end_span)
+    2|02) xdg-open "https://rs-appstore.blogspot.com" ;;[span_11](start_span)[span_11](end_span)
+    3|03) xdg-open "https://rehan-sandhi.blogspot.com" ;;[span_12](start_span)[span_12](end_span)
+    4|04) xdg-open "https://rehansandhi181.blogspot.com" ;;[span_13](start_span)[span_13](end_span)
+    5|05) xdg-open "https://amrutam-water.netlify.app/rs.html" ;;[span_14](start_span)[span_14](end_span)
+    6|06) xdg-open "https://rs-181.github.io/Aastin-Ka-Sanp/" ;;[span_15](start_span)[span_15](end_span)
+    7|07) xdg-open "https://rs-181.github.io/rs-os/" ;;[span_16](start_span)[span_16](end_span)
+    8|08) xdg-open "https://rs-digitle-pay.netlify.app/" ;;[span_17](start_span)[span_17](end_span)
+    9|09) xdg-open "https://rs-browser.netlify.app" ;;[span_18](start_span)[span_18](end_span)
+    10)   xdg-open "https://rs-181.github.io/rs-certificate/" ;;[span_19](start_span)[span_19](end_span)
+    *) echo -e "\e[1;31m[-] Invalid Selection. Exiting Matrix...\e[0m" ;;
+esac
