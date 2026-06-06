@@ -7,7 +7,6 @@ YELLOW='\033[1;33m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m'
-BOLD='\033[1m'
 
 clear
 
@@ -51,9 +50,10 @@ echo -e "${RED}[!] Web Version :${NC} https://rehansandhi.netlify.app"
 echo -e "${PURPLE}#################################################################################${NC}"
 echo ""
 
-# Function to open URL based on OS
+# Function to open URL
 open_url() {
     url="$1"
+    echo -e "${GREEN}[✓] Opening: ${url}${NC}"
     case "$(uname -s)" in
         Linux*)  xdg-open "$url" 2>/dev/null || sensible-browser "$url" 2>/dev/null || echo "Please open: $url" ;;
         Darwin*) open "$url" 2>/dev/null ;;
@@ -62,30 +62,27 @@ open_url() {
     esac
 }
 
-# Main loop
-while true; do
-    echo -ne "${YELLOW}[?] Enter your choice (1-10) or 'q' to quit: ${NC}"
-    read choice
-    echo ""
+# Single input — no loop
+echo -ne "${YELLOW}[?] Enter your choice (1-10): ${NC}"
+read choice
+echo ""
 
-    case $choice in
-        1)  open_url "https://rs-181.github.io/gl" ;;
-        2)  open_url "https://rs-appstore.blogspot.com" ;;
-        3)  open_url "https://rehan-sandhi.blogspot.com" ;;
-        4)  open_url "https://rehansandhi181.blogspot.com" ;;
-        5)  open_url "https://amrutam-water.netlify.app/rs.html" ;;
-        6)  open_url "https://rs-181.github.io/Aastin-Ka-Sanp/" ;;
-        7)  open_url "https://rs-181.github.io/rs-os/" ;;
-        8)  open_url "https://rs-digitle-pay.netlify.app/" ;;
-        9)  open_url "https://rs-browser.netlify.app" ;;
-        10) open_url "https://rs-181.github.io/rs-certificate/" ;;
-        q|Q)
-            echo -e "${GREEN}[✓] Goodbye! Thanks for visiting Rehan Sandhi Digital Ecosystem.${NC}"
-            exit 0
-            ;;
-        *)
-            echo -e "${RED}[X] Invalid choice! Please enter a number between 1-10 or 'q' to quit.${NC}"
-            ;;
-    esac
-    echo ""
-done
+case $choice in
+    1)  open_url "https://rs-181.github.io/gl" ;;
+    2)  open_url "https://rs-appstore.blogspot.com" ;;
+    3)  open_url "https://rehan-sandhi.blogspot.com" ;;
+    4)  open_url "https://rehansandhi181.blogspot.com" ;;
+    5)  open_url "https://amrutam-water.netlify.app/rs.html" ;;
+    6)  open_url "https://rs-181.github.io/Aastin-Ka-Sanp/" ;;
+    7)  open_url "https://rs-181.github.io/rs-os/" ;;
+    8)  open_url "https://rs-digitle-pay.netlify.app/" ;;
+    9)  open_url "https://rs-browser.netlify.app" ;;
+    10) open_url "https://rs-181.github.io/rs-certificate/" ;;
+    *)
+        echo -e "${RED}[X] Invalid choice! Please run again and enter 1-10.${NC}"
+        exit 1
+        ;;
+esac
+
+echo ""
+echo -e "${GREEN}[✓] Thanks for using Rehan Sandhi Digital Ecosystem!${NC}"
